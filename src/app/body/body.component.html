@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+     <div class="col-md-6">
+      <h1>FORM DATA MAHASISWA</h1>
+      <hr>
+      <label>NIM</label>
+       <input type="text" class="form-control" [(ngModel)]="nim">
+       <label>NAMA</label>
+       <input type="text" class="form-control" [(ngModel)]="nama">
+       <label>KELAS</label>
+       <input type="text" class="form-control" [(ngModel)]="kelas">
+       <br>
+       <button class="btn btn-block btn-primary"
+         (click)="tambahMhs()">Tambah</button>
+      </div>
+      <div class="col-md-6">
+       <h1>DATA MAHASISWA</h1>
+       <hr>
+       <div *ngFor="let cons of daftarMhs">
+         <div class="card">
+           <h5 class="card-header">{{ cons.nim }}</h5> 
+           <div class="card-body">
+           <h5>{{ cons.nama }}</h5>
+           <p class="card-text">{{ cons.kelas }}</p>
+           </div>
+         </div>
+       </div>
+     </div>
+  </div>
+</div>
